@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра со стопками монет</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game">
+        <p id="explanation">Перед вами 3 стопки монет. За одно действие можно либо переложить ровно половину монет из одной стопки в другую, либо убрать из стопки 1 монету, если в ней ровно 1 монета. Ваша цель - избавиться от всех монет.</p>
+        <div class="pile-container">
+            <button class="remove-btn" onclick="removeOneCoin(1)">Удалить одну монету из 1</button>
+            <div class="pile" id="pile1">Стопка 1: <span id="pile1Count">10</span> монет</div>
+            <div class="move-buttons">
+                <button class="move-btn" onclick="moveHalfCoins(1, 2)">Переложить половину в 2</button>
+                <button class="move-btn" onclick="moveHalfCoins(1, 3)">Переложить половину в 3</button>
+            </div>
+        </div>
+        <div class="pile-container">
+            <button class="remove-btn" onclick="removeOneCoin(2)">Удалить одну монету из 2</button>
+            <div class="pile" id="pile2">Стопка 2: <span id="pile2Count">11</span> монет</div>
+            <div class="move-buttons">
+                <button class="move-btn" onclick="moveHalfCoins(2, 1)">Переложить половину в 1</button>
+                <button class="move-btn" onclick="moveHalfCoins(2, 3)">Переложить половину в 3</button>
+            </div>
+        </div>
+        <div class="pile-container">
+            <button class="remove-btn" onclick="removeOneCoin(3)">Удалить одну монету из 3</button>
+            <div class="pile" id="pile3">Стопка 3: <span id="pile3Count">12</span> монет</div>
+            <div class="move-buttons">
+                <button class="move-btn" onclick="moveHalfCoins(3, 1)">Переложить половину в 1</button>
+                <button class="move-btn" onclick="moveHalfCoins(3, 2)">Переложить половину в 2</button>
+            </div>
+        </div>
+        <button class="action-btn" onclick="undo()">Отменить последнее действие</button>
+        <button class="action-btn" onclick="resetGame()">Начать заново</button>
+        <button class="action-btn" onclick="startOverWithNewPiles()">Заново с другими стопками</button>
+        <div id="winMessage" style="display:none;">Молодец!!!</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
