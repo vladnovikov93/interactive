@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перекладывание монет в кучках</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game">
+        <p id="explanation">Перед вами 3 стопки монет. За одно действие можно либо переложить ровно половину монет из одной стопки в другую, либо убрать из стопки 1 монету, если в ней ровно 1 монета. Ваша цель - избавиться от всех монет.</p>
+        <div class="pile-row">
+            <div class="pile-container" id="pile1"></div>
+            <div class="pile-container" id="pile2"></div>
+            <div class="pile-container" id="pile3"></div>
+        </div>
+        <button class="action-btn" onclick="undo()">Отменить последнее действие</button>
+        <button class="action-btn" onclick="resetGame()">Начать заново</button>
+        <button class="action-btn" onclick="startOverWithNewPiles()">Заново с другими стопками</button>
+        <div id="winMessage" style="display:none;">Молодец!!!</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
